@@ -5,16 +5,16 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#0077c2",
-          "foreground": "#ffffff",
+          "background": "#65F0D4",
+          "foreground": "#d3d0d0",
           "leading_diamond": "\u256d\u2500\ue0b6",
           "style": "diamond",
           "template": " {{ .Name }} ",
           "type": "shell"
         },
         {
-          "background": "#ef5350",
-          "foreground": "#FFFB38",
+          "background": "#A35292",
+          "foreground": "#A35234",
           "properties": {
             "root_icon": "\uf292"
           },
@@ -23,7 +23,7 @@
           "type": "root"
         },
         {
-          "background": "#444444",
+          "background": "#F08965",
           "foreground": "#E4E4E4",
           "powerline_symbol": "\ue0b0",
           "properties": {
@@ -34,7 +34,7 @@
           "type": "path"
         },
         {
-          "background": "#FFFB38",
+          "background": "#dad86a",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#ffeb95{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#c5e478{{ end }}",
@@ -60,12 +60,12 @@
       "segments": [
         {
           "background": "#303030",
-          "foreground": "#3C873A",
-          "leading_diamond": " \ue0b6",
+          "foreground": "#68a4b1",
+          "leading_diamond": "\ue0b6",
           "properties": {
             "fetch_package_manager": true,
             "npm_icon": " <#cc3a3a>\ue5fa</> ",
-            "yarn_icon": " <#348cba>\uf61a</>"
+            "yarn_icon": " <#3BE68B>\uf61a</>"
           },
           "style": "diamond",
           "template": "\ue718 {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }}",
@@ -73,12 +73,12 @@
           "type": "node"
         },
         {
-          "background": "#40c4ff",
+          "background": "#58acd3",
           "foreground": "#ffffff",
           "invert_powerline": true,
           "leading_diamond": " \ue0b6",
           "style": "diamond",
-          "template": " \uf5ef {{ .CurrentDate | date .Format }} ",
+          "template": "\uf5ef {{ .CurrentDate | date .Format }}",
           "trailing_diamond": "\ue0b4",
           "type": "time"
         }
@@ -90,16 +90,14 @@
       "newline": true,
       "segments": [
         {
-          "foreground": "#21c7c7",
+          "foreground": "#48c0c0",
           "style": "plain",
           "template": "\u2570\u2500",
           "type": "text"
         },
         {
           "foreground": "#e0f8ff",
-          "foreground_templates": [
-            "{{ if gt .Code 0 }}#ef5350{{ end }}"
-          ],
+          "foreground_templates": ["{{ if gt .Code 0 }}#ef5350{{ end }}"],
           "properties": {
             "always_enabled": true
           },
