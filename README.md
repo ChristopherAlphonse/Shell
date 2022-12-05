@@ -8,7 +8,7 @@
   <p align="center">
     This is a bootstrap project, the technologies used aren't my own but rather utilized and modified to fit my preferences.
     <br />
-    <a href="https://github.com/ChristopherAlphonse/powershell"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/ChristopherAlphonse/admindashboard"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   
@@ -24,9 +24,6 @@
   </a>
   <a href="https://github.com/ChristopherAlphonse/Powershell/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="https://github.com/ChristopherAlphonse/Powershell/blob/master/LICENSE" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/github/license/ChristopherAlphonse/powershell" />
   </a>
 </p>
 
@@ -45,9 +42,6 @@
   <ol>
     <li>
       <a href="#about-the-project">About This Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
@@ -56,29 +50,50 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-
+    <li><a href="#terminal-settings">Terminal Settings</a></li>
+ <ul>
+        <li><a href="#vs-code">VS Code</a></li>
+        <li><a href="#terminal">Terminal JSON</a></li>
+        <li><a href="#install-font">Font</a></li>
+        
+        
+      </ul>
   </ol>
 </details>
-
-<!-- ABOUT THE PROJECT -->
-
-## About The Project
-
-![Product Screen Shot][product-screenshot]
-
-### Built With
-
-- ![React][react] ![Node][node] ![Mongo][mongo]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Before we get started, this is a tutorial for <i>Windows</i> only. With that been said, lets begin.
+
+- Download [Microsoft Store](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54768)
+
+- Download [App Installer](https://apps.microsoft.com/store/detail/app-installer/9NBLGGH4NNS1?hl=en-us&gl=us)
+
+Open CMD for Windows
+
+```sh
+winget install -e --id Microsoft.WindowsTerminal
+```
+
+Open the Terminal in Admin mode by pressing on <i> CTRL + SHIFT + Click on Terminal icon</i> <b> OR </b> press the windows key and locate Terminal.exe, and right click on Terminal icon and select <i>Run as Administrator</i> .
+
+Install Winget
+
+```sh
+winget install -e --id JanDeDobbeleer.OhMyPosh
+```
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+These are the final Look for the terminal and vs code integrated terminal
+
+![Product Screen Shot][product-screenshot]
+<br/>
+![Product Screen Shot][vs-screenshot]
 
 ### Prerequisites
 
@@ -102,25 +117,62 @@ Open your terminal and sure node and nodemon is installed and up to date
    yarn or npm i
    ```
 3. Enter your ENV in both client and sever folder
+
    ```
-   yarn add dotenv or npm i dotenv
+   yarn add dotenv or npm i dotenv,
+
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- USAGE EXAMPLES -->
+<!--  EXAMPLES -->
 
-## Usage
+## vs code
 
-Usage of this repo or software will help provide a greater understand for error handling, password resetting, and creating and deleting users from a database.
+```json
+ "terminal.integrated.defaultProfile.windows": "PowerShell",
+ "workbench.colorCustomizations": {
+ "terminal.foreground": "#ffffff",
+ "terminal.background": "#515761",
+ "editor.lineHighlightBackground": "#4046452d",
+ "editor.lineHighlightBorder": "#7a05701f",
+ "tab.activeBackground": "#2e327195",
+ "terminal.integrated.fontFamily": "MesloLGM NF",
+"terminal.integrated.defaultProfile.linux": "bash",
+"terminal.integrated.gpuAcceleration": "off",
+"workbench.colorTheme": " Azalais Dark ",
+"terminal.integrated.enableMultiLinePasteWarning": false,
+"terminal.integrated.splitCwd": "workspaceRoot",
+"terminal.integrated.tabs.defaultColor": "terminal.ansiCyan",
+"terminal.integrated.smoothScrolling": true,
+"markdown.preview.lineHeight": 2,
+"terminal.integrated.cursorWidth": 0,
+"terminal.integrated.fontSize": 12,
+```
 
-<!-- _For more examples, please refer to the [Documentation](https://example.com)_ -->
+<!--  JSON -->
+
+## Terminal
+
+Open the terminal folder and navigate to JSON file and replace with [Terminal JSON](https://github.com/ChristopherAlphonse/Powershell/blob/master/Terminal/setting.json)
+
+Finding the JSON files
+
+- Press Ctrl+,
+- Look Bottom left: OPEN JSON file <br/>
+  ![JSON Screen Shot][json]
+
+- Copy and replace the JSON file
+
+## Install font
+
+Open the terminal folder and navigate top Font and Installed [Meslo Font](https://github.com/ChristopherAlphonse/Powershell/blob/master/Terminal/Font)
+<br/>
+![Font Face][font]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[react]: ./example/icons/react_icon.png
-[node]: ./example/icons/node_icon.png
-[mongo]: ./example/icons/mongo_icon.png
-[redux]: ./example/icons/redux.png
-[sass]: ./example/icons/sass.png
-[product-screenshot]: ./Client/src/assets/logo.png
+[product-screenshot]: ./logo/Capture.JPG
+[vs-screenshot]: ./logo/vs_code.JPG
+[json]: ./logo/JSON_terminal.JPG
+[font]: ./logo/font.JPG
