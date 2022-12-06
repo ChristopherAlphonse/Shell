@@ -65,7 +65,7 @@
 
 ## Getting Started
 
-Before we get started, this is a tutorial for <i>Windows</i> only. With that been said, lets begin.
+Before we get started, this is a tutorial for <i>Windows</i> only. With that being said, lets begin.
 
 - Download [Microsoft Store](https://www.microsoft.com/en-us/download/confirmation.aspx?id=54768)
 
@@ -99,29 +99,26 @@ These are the final Look for the terminal and vs code integrated terminal
 
 Open your terminal and sure node and nodemon is installed and up to date
 
-- Make a folder
-  ```sh
-  mkdir admindashboard
-  cd admindashboard
-  ```
+- Go to Documents Folder
 
 ### Installation
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ChristopherAlphonse/admindashboard.git
+   git clone https://github.com/ChristopherAlphonse/Powershell.git
    code .
    ```
 2. Install packages
-   ```sh
-   yarn or npm i
-   ```
-3. Enter your ENV in both client and sever folder
 
-   ```
-   yarn add dotenv or npm i dotenv,
+```sh
+Install-Module -Name posh-git -RequiredVersion 1.0.0
+Install-Module -Name PSFzf -AllowPrerelease
+Install-Module -Name PSFzf -AllowPrerelease
+Install-Module -Name Terminal-Icons
+Install-Module -Name z
+```
 
-   ```
+3. Copy the files and remove the Terminal folder, and read for next step
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,6 +166,8 @@ Finding the JSON files
 Open the terminal folder and navigate top Font and Installed [Meslo Font](https://github.com/ChristopherAlphonse/Powershell/blob/master/Terminal/Font)
 <br/>
 ![Font Face][font]
+
+# IF YOU ARE STUCK PLEASE OPEN AN [ISSUE REQUEST](https://github.com/ChristopherAlphonse/Powershell/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
