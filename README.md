@@ -55,8 +55,6 @@
         <li><a href="#vs-code">VS Code</a></li>
         <li><a href="#terminal">Terminal JSON</a></li>
         <li><a href="#install-font">Font</a></li>
-        
-        
       </ul>
   </ol>
 </details>
