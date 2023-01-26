@@ -15,6 +15,9 @@ Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory
 Set-Alias -Name vim -Value nvim
 Set-Alias -Name touch -Value New-Item
 Set-Alias ll ls
+set-Alias -name pn -value pnpm
+set-Alias rm Remove-Item -Recurse -Force
+
 
 
 new-alias grep findstr
