@@ -4,6 +4,7 @@ oh-my-posh --init --shell pwsh --config $omp_config | Invoke-Expression
 Import-Module posh-git
 Import-Module -Name Terminal-Icons
 Import-Module PSFzf
+Import-Module PowerShellGet
 
 
 Set-PSReadLineOption -EditMode Emacs
