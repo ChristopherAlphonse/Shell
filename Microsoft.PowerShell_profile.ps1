@@ -13,14 +13,9 @@ Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
 Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
-Set-alias -Name vim -Value nvim
+
 Set-alias -Name touch -Value New-Item
 Set-alias ll ls
-set-alias -name pn -value pnpm
-set-alias rm Remove-Item -Recurse -Force
 
-
-
-new-alias grep findstr
 
 Clear-Host
