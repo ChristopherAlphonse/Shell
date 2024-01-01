@@ -1,122 +1,184 @@
-{
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "blocks": [
-    {
-      "alignment": "left",
-      "segments": [
-        {
-          "background": "#7E1946",
-          "foreground": "#FBFEF9",
-          "style": "plain",
-          "template": "\u26a1 ",
-          "type": "root"
-        },
-        {
-          "background": "transparent",
-          "foreground": "#FBFEF9",
-          "style": "plain",
-          "template": "{{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "type": "os"
-        },
-        {
-          "background": "#0C6291",
-          "foreground": "#FBFEF9",
-          "leading_diamond": "<transparent,#0C6291>\ue0b0</>",
-          "properties": {
-            "folder_icon": "\uf6d7",
-            "folder_separator_icon": "<transparent> \ue0bd </>",
-            "home_icon": "\uf7db",
-            "style": "agnoster_short"
-          },
-          "style": "diamond",
-          "template": " {{ .Path }} ",
-          "trailing_diamond": "\ue0b0",
-          "type": "path"
-        },
-        {
-          "background": "#7E1946",
-          "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#A63446{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#FFCC80{{ end }}",
-            "{{ if gt .Ahead 0 }}#EFD28D{{ end }}",
-            "{{ if gt .Behind 0 }}#EFD28D{{ end }}"
-          ],
-          "foreground": "#000000",
-          "powerline_symbol": "\ue0b0",
-          "properties": {
-            "fetch_stash_count": true,
-            "fetch_status": true
-          },
-          "style": "powerline",
-          "template": " {{ .HEAD }}{{ if .Staging.Changed }}<#FF6F00> \uf046 {{ .Staging.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
-          "type": "git"
-        },
-        {
-          "background": "#000004",
-          "foreground": "#FBFEF9",
-          "leading_diamond": "<transparent,#000004>\ue0b0</>",
-          "properties": {
-            "style": "dallas",
-            "threshold": 0
-          },
-          "style": "diamond",
-          "template": " {{ .FormattedMs }}s ",
-          "trailing_diamond": "\ue0b0",
-          "type": "executiontime"
-        },
-        {
-          "background": "#910000",
-          "foreground": "#FBFEF9",
-          "powerline_symbol": "\ue0b0",
-          "style": "powerline",
-          "template": "<transparent> \uf12a</> {{ .Meaning }} ",
-          "type": "exit"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "right",
-      "segments": [
-        {
-          "background": "#7E1946",
-          "foreground": "#FBFEF9",
-          "leading_diamond": "\ue0c5",
-          "style": "diamond",
-          "template": "  {{ .UserName }}<transparent> / </>{{ .HostName }}",
-          "type": "session"
-        },
-        {
-          "background": "#0C6291",
-          "foreground": "#FBFEF9",
-          "properties": {
-            "time_format": "15:04:05"
-          },
-          "style": "plain",
-          "template": "<transparent> \ue0ba\ue0bc </>{{ .CurrentDate | date .Format }} ",
-          "type": "time"
-        }
-      ],
-      "type": "prompt"
-    },
-    {
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "#FBFEF9",
-          "foreground_templates": ["{{ if gt .Code 0 }}#ff0000{{ end }}"],
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "plain",
-          "template": "\u276f ",
-          "type": "exit"
-        }
-      ],
-      "type": "prompt"
-    }
-  ],
-  "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏚\" }} @ {{.HostName}}",
-  "version": 2
+Import-Module -Name Terminal-Icons
+Install-Module -Name posh-git -RequiredVersion 1.0.0
+Install-Module -Name PSFzf -AllowPrerelease
+Install-Module -Name PSFzf -AllowPrerelease
+Install-Module -Name z
+
+oh-my-posh init pwsh --config './chris.omp.json' | Invoke-Expression
+
+
+
+
+
+
+
+
+function md5 { Get-FileHash -Algorithm MD5 $args }
+function sha1 { Get-FileHash -Algorithm SHA1 $args }
+function sha256 { Get-FileHash -Algorithm SHA256 $args }
+
+
+
+function atob {
+    param(
+        [string]$userInput
+    )
+
+    $encodedString = $userInput
+    $decodedResult = [System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String($encodedString))
+
+    Write-Output $decodedResult
 }
+
+function btos {
+    param(
+        [string]$binaryInput
+    )
+
+    $binaryArray = $binaryInput -split '\s+' | ForEach-Object { [Convert]::ToByte($_, 2) }
+
+    $decodedString = [System.Text.Encoding]::UTF8.GetString($binaryArray)
+
+    Write-Output $decodedString
+}
+
+#BinaryToString
+function btoa {
+    param(
+        [string]$userInput
+    )
+
+    $encodedBytes = [System.Text.Encoding]::UTF8.GetBytes($userInput)
+    $encodedString = [System.Convert]::ToBase64String($encodedBytes)
+
+    Write-Output $encodedString
+}
+
+#StringToBinary
+function stob {
+    param(
+        [string]$userInput
+    )
+
+    $binaryString = [System.Text.Encoding]::UTF8.GetBytes($userInput) | ForEach-Object { [Convert]::ToString($_, 2).PadLeft(8, '0') }
+
+    $binaryString | Join-String -Separator ' ' | Write-Host -NoNewline
+}
+
+# StringToCrypto
+function stoc {
+    param (
+        [string]$inputString
+    )
+
+    # Check if the input string is empty
+    if ($inputString -eq "") {
+        Write-Output "Input string is empty. Cannot generate UUID."
+        return
+    }
+
+    # Compute MD5 hash
+    $md5Hash = [System.Security.Cryptography.MD5]::Create().ComputeHash([System.Text.Encoding]::UTF8.GetBytes($inputString))
+    $formattedUUID = [guid]::NewGuid()
+
+    return $formattedUUID
+
+# Convert the string to crypto
+$cryptoResult = stoc -inputString $inputString
+Write-Output "Original String: $inputString"
+Write-Output "Crypto Result: $cryptoResult"
+
+
+}
+
+
+
+
+
+
+
+
+
+
+# Check if the encoded string is provided as a command-line argument
+if ($args.Count -eq 1) {
+    $encodedString = $args[0]
+
+    # Call the function with the encoded string
+    $decodedResult = atob $encodedString
+
+    # Output the decoded result
+    Write-Output $decodedResult
+} else {
+    Write-Output "Usage: PowerShellScript.ps1 <base64-encoded-string>"
+}
+
+
+
+function touch($file) {
+  "" | Out-File $file -Encoding ASCII
+}
+
+function pkill($name) {
+  Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
+}
+
+
+
+
+
+
+function Edit-Profile {
+  if ($host.Name -match "ise") {
+    $psISE.CurrentPowerShellTab.Files.Add($profile.CurrentUserAllHosts)
+  }
+  else {
+    notepad $profile.CurrentUserAllHosts
+  }
+}
+
+function gcom {
+  git add .
+  git commit -m "$args"
+}
+function lazyg {
+  git add .
+  git commit -m "$args"
+  git push
+}
+
+
+function find-file($name) {
+  Get-ChildItem -recurse -filter "*${name}*" -ErrorAction SilentlyContinue | ForEach-Object {
+    $place_path = $_.directory
+    Write-Output "${place_path}\${_}"
+  }
+}
+function unzip ($file) {
+  Write-Output("Extracting", $file, "to", $pwd)
+  $fullFile = Get-ChildItem -Path $pwd -Filter .\cove.zip | ForEach-Object { $_.FullName }
+  Expand-Archive -Path $fullFile -DestinationPath $pwd
+}
+
+
+
+
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+  Import-Module "$ChocolateyProfile"
+}
+
+
+
+New-Alias -Name where -Value find-file
+
+
+
+ Clear-Host
+
+
+
+
+
+
+
