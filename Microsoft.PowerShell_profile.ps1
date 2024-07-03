@@ -1,14 +1,10 @@
-# Import necessary modules with force to update to the latest versions
-Install-Module -Name posh-git -RequiredVersion 1.0.0 -Force -ErrorAction SilentlyContinue
 
-Install-Module -Name z -Force -ErrorAction SilentlyContinue
+Import-Module posh-git
+Import-Module PowerShellGet
+Import-Module posh-git
+Import-Module -Name Terminal-Icons
+Import-Module PowerShellGet
 
-# Use background job to load modules asynchronously
-Start-Job -ScriptBlock {
-    Import-Module posh-git
- 
-    Import-Module PowerShellGet
-}
 
 
 # Hash functions
@@ -29,7 +25,7 @@ function atob {
 }
 
 # Note
-# Alt + t or `option + t` split on the y axis 
+# Alt + t or `option + t` split on the y axis
 # Alt + b or `option + b` split on the x axis
 
 # Initialize Oh My Posh with a specific theme configuration
@@ -81,16 +77,13 @@ function pkill($name) {
     Get-Process $name -ErrorAction SilentlyContinue | Stop-Process
 }
 
-# Import Chocolatey profile if it exists
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-    Import-Module "$ChocolateyProfile"
-}
+
 
 # Set PSReadLine options
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+f' -PSReadlineChordReverseHistory 'Ctrl+r'
 
 
