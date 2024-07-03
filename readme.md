@@ -8,7 +8,7 @@
   <p align="center">
     This is a bootstrap project, the technologies used aren't my own but rather utilized and modified to fit my preferences.
     <br />
-    <a href="https://github.com/ChristopherAlphonse/admindashboard"><strong>Explore the docs »</strong></a>
+<!--     <a href="https://github.com/ChristopherAlphonse/admindashboard"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
   
