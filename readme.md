@@ -1,6 +1,6 @@
 <div align="center">
   <a href="#">
-    <img src="./logo/PowerShell_Core_6.0_icon.png" alt="Logo" width="70" height="70">
+    <img src="./pwsh/logo/PowerShell_Core_6.0_icon.png" alt="Logo" width="70" height="70">
   </a>
 
 <h3 align="center">Chris's Powershell Settings</h3>
@@ -11,23 +11,23 @@
 <!--     <a href="https://github.com/ChristopherAlphonse/admindashboard"><strong>Explore the docs »</strong></a> -->
     <br />
     <br />
-  
+
   </p>
 </div>
 
 <p>
-  <a href="https://www.npmjs.com/package/powershell" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/powershell.svg">
+  <a href="https://www.npmjs.com/package/Shell" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/Shell.svg">
   </a>
-  <a href="https://github.com/ChristopherAlphonse/Powershell#readme" target="_blank">
+  <a href="https://github.com/ChristopherAlphonse/Shell#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/ChristopherAlphonse/Powershell/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/ChristopherAlphonse/Shell/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
 </p>
 
-### 🏠 [Homepage](https://github.com/ChristopherAlphonse/Powershell#readme)
+### 🏠 [Homepage](https://github.com/ChristopherAlphonse/Shell#readme)
 
 ## Author
 
@@ -103,7 +103,7 @@ Open your terminal and sure node and nodemon is installed and up to date
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ChristopherAlphonse/Powershell.git
+   git clone https://github.com/ChristopherAlphonse/Shell.git
    code .
    ```
 2. Install packages
@@ -149,7 +149,7 @@ Install-Module -Name z
 
 ## Terminal
 
-Open the terminal folder and navigate to JSON file and replace with [Terminal JSON](https://github.com/ChristopherAlphonse/Powershell/blob/master/Terminal/setting.json)
+Open the terminal folder and navigate to JSON file and replace with [Terminal JSON](https://github.com/ChristopherAlphonse/Shell/blob/master/Terminal/setting.json)
 
 Finding the JSON files
 
@@ -161,11 +161,11 @@ Finding the JSON files
 
 ## Install font
 
-Open the terminal folder and navigate top Font and Installed [Meslo Font](https://github.com/ChristopherAlphonse/Powershell/blob/master/Terminal/Font)
+Open the terminal folder and navigate top Font and Installed [Meslo Font](https://github.com/ChristopherAlphonse/Shell/blob/master/Terminal/Font)
 <br/>
 ![Font Face][font]
 
-# IF YOU ARE STUCK PLEASE OPEN AN [ISSUE REQUEST](https://github.com/ChristopherAlphonse/Powershell/issues)
+# IF YOU ARE STUCK PLEASE OPEN AN [ISSUE REQUEST](https://github.com/ChristopherAlphonse/Shell/issues)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
