@@ -16,9 +16,6 @@
 </div>
 
 <p>
-  <a href="https://www.npmjs.com/package/Shell" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/Shell.svg">
-  </a>
   <a href="https://github.com/ChristopherAlphonse/Shell#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
@@ -169,7 +166,7 @@ Open the terminal folder and navigate top Font and Installed [Meslo Font](https:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[product-screenshot]: ./logo/Capture.JPG
-[vs-screenshot]: ./logo/vs_code.JPG
-[json]: ./logo/JSON_terminal.JPG
-[font]: ./logo/font.JPG
+[product-screenshot]: ./pwsh/logo/Capture.JPG
+[vs-screenshot]: ./pwsh/logo/vs_code.JPG
+[json]: ./pwsh/JSON_terminal.JPG
+[font]: ./pwsh/font.JPG
