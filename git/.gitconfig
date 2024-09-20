@@ -1,0 +1,17 @@
+[user]
+    name =
+    email =
+
+[alias]
+    co = checkout
+    st = status
+    br = branch
+    ca = commit --amend
+    cm = commit -m
+    lg = log --graph --date=short --pretty='format:%C(green)%ad %C(yellow)%h%Creset %C(cyan)%aN%Creset %s%C(magenta bold)%d%Creset'
+
+[push]
+    autoSetupRemote = true
+[pull]
+	rebase = true
+	ff = only
