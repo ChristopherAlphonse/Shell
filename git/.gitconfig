@@ -1,17 +1,52 @@
 [user]
-    name =
-    email =
+    name = Christopher Alphonse
+    email = chris.alphonse@ezcater.com
+
+[github]
+    user = christopheralphonse
 
 [alias]
-    co = checkout
-    st = status
-    br = branch
-    ca = commit --amend
-    cm = commit -m
-    lg = log --graph --date=short --pretty='format:%C(green)%ad %C(yellow)%h%Creset %C(cyan)%aN%Creset %s%C(magenta bold)%d%Creset'
+    a = add
+    ci = commit -v
+    d = diff
+    dif = diff
+    l = log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lo = log -1 --pretty='%C(red)%H%nAuthor: %C(green)%an%n%C(magenta)%s%n%b'
+    ls = branch -a
+    circle = !gh pr checks
+    open = !gh browse
+    pr = !gh pr create --fill
+    rebae = rebase
+    rebasse = rebase
+    rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
+    s = status --short --branch
+    spec = "!bundle exec rspec `git ls-files --modified --others spec | grep _spec`"
+    unstage = reset
+    wip = !git add . && git commit -m '[ci skip] WIP'
 
 [push]
     autoSetupRemote = true
+
 [pull]
-	rebase = true
-	ff = only
+    rebase = true
+    ff = only
+
+[core]
+    editor = code -w
+    whitespace = trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+    autocrlf = false
+
+[merge]
+    ff = only
+
+[push]
+    default = simple
+    autoSetupRemote = true
+
+[diff]
+    mnemonicprefix = true
+    compactionHeuristic = true
+
+[init]
+    defaultBranch = main
