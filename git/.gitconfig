@@ -1,5 +1,39 @@
-# Credit where credit is due - thank you @gabebw:
-# https://github.com/gabebw/dotfiles/blob/master/tag-git/gitconfig
+[diff "astextplain"]
+    textconv = astextplain
+
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+[http]
+    sslBackend = openssl
+# Windows
+    sslCAInfo = C:/Program Files/Git/mingw64/etc/ssl/certs/ca-bundle.crt
+
+[core]
+    autocrlf = true
+    fscache = true
+    symlinks = true
+    fsmonitor = true
+    editor = code -w
+    whitespace = trailing-space,cr-at-eol
+    excludesfile = ~/.gitignore
+    autocrlf = false
+
+[pull]
+    rebase = false
+
+[credential]
+    helper = manager
+
+[credential "https://dev.azure.com"]
+    useHttpPath = true
+
+[init]
+    defaultBranch = main  
+# Changed from master to main for consistency
 
 [user]
     name = Christopher Alphonse
@@ -8,25 +42,11 @@
 [github]
     user = christopheralphonse
 
-[core]
-    editor = code -w
-    whitespace = trailing-space,cr-at-eol
-    excludesfile = ~/.gitignore
-    autocrlf = false
-
 [merge]
-    # Per @jferris: `ff = only` means Git will never implicitly do a merge
-    # commit, including while doing git pull. If I'm unexpectedly out of sync
-    # when I git pull, I get this message: fatal: Not possible to fast-forward,
-    # aborting. At that point, I know that I've forgotten to do something in my
-    # normal workflow, and I retrace my steps.
-    ff = only
+    ff = only  # Fast forward only
 
 [diff]
-    # Git diff will use (i)ndex, (w)ork tree, (c)ommit and (o)bject instead of
-    # a/b/c/d as prefixes for patches
     mnemonicprefix = true
-    # Turn on an experimental heuristic that should make the diff easier to read
     compactionHeuristic = true
 
 [alias]
@@ -40,8 +60,7 @@
     circle = !gh pr checks
     open = !gh browse
     pr = !gh pr create --fill
-    rebae = rebase
-    rebasse = rebase
+    rebase = rebase  # Fixed misspellings
     rubocop = "!git status --porcelain | cut -c4- | grep '.rb' | xargs bundle exec rubocop"
     s = status --short --branch
     spec = "!bundle exec rspec `git ls-files --modified --others spec | grep _spec`"
@@ -49,14 +68,10 @@
     wip = !git add . && git commit -m '[ci skip] WIP'
 
     # Typos
-    puhs = push
-    pul = pull
-    pus = push
-    brnach = branch
+    push = push
+    pull = pull
+    branch = branch
 
 [push]
     default = simple
     autoSetupRemote = true
-
-[init]
-    defaultBranch = main
