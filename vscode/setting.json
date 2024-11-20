@@ -63,7 +63,6 @@
   "editor.linkedEditing": true,
   "editor.wordWrapColumn": 100,
   "editor.fontFamily": "FiraCode Nerd Font,FiraMono Nerd Font, MesloGLDZ Nerd Font, Monaco, 'Courier New', monospace",
-  "editor.fontLigatures": false,
   "editor.suggest.insertMode": "replace",
   "editor.letterSpacing": 1,
   "editor.renderWhitespace": "all",
@@ -216,7 +215,8 @@
   // misc
   "editor.largeFileOptimizations": false,
   "vscode_custom_css.imports": [
-    "file:///Users/chrisalphonse/vscode-settings-json-main/custom-vscode.css"
+    "file:///Users/chrisalphonse/vscode-settings-json-main/custom-vscode.css",
+    "file:///Users/chrisalphonse/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
   ],
   "workbench.sideBar.location": "right",
   "extensions.autoCheckUpdates": false,
@@ -247,31 +247,28 @@
     ".monaco-inputbox input::placeholder": "color: rgba(255, 255, 255, .5) !important;",
     ".slider": "position: absolute !important; right: 0.0625em !important; width: 1em !important; background: #2BA59D !important; left: auto !important;"
   },
+  "apc.electron": {
+    "opacity": 0.95,
+    "transparent": true,
+    "backgroundColor": "#00000000",
+    "vibrancy": "ultra-dark"
+  },
+
+  "editor.cursorBlinking": "phase",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "animations.Enabled": true,
+  "animations.CursorAnimation": true,
+  "animations.Command-Palette": "None",
+  "animations.CursorAnimationOptions": {
+    "TrailLength": 10
+  },
+  "animations.Tabs": "Slide",
+  "animations.Active": "Indent",
+  "editor.fontLigatures": true,
   "breadcrumbs.enabled": false,
 
   "background.enabled": true,
 
-  //   "background.style": {
-  //     "content": "''",
-  //     "pointer-events": "none",
-  //     "position": "absolute",
-  //     "top": "0",
-  //     "left": "0",
-  //     "right": "0",
-  //     "bottom": "0",
-  //     "width": "100%",
-  //     "height": "100%",
-  //     "z-index": "9999",
-  //     "background-size": "cover",
-  //     "background-position": "center",
-  //     "background-repeat": "no-repeat",
-  //     "opacity": 0.1
-  //   },
-  //   "background.customImages": [
-  //     "https://static.wixstatic.com/media/357f4a_65857f1220c14e7cb9763945ce505819~mv2.png/v1/crop/x_0,y_79,w_1642,h_2232/fill/w_290,h_395,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/girl%20and%20balloon%20dekupe%20Christmas_edited.png",
-  //     "https://raw.githubusercontent.com/ThrowSyntaxError/background/refs/heads/main/7.jpeg",
-  //     "https://user-images.githubusercontent.com/18376480/55394572-30827700-5572-11e9-9435-2cc501eb53bb.png"
-  //   ]
   "background.editor": {
     "useFront": true,
     "style": {
