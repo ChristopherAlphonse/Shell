@@ -14,37 +14,7 @@
   "notebook.formatOnSave.enabled": true,
   "window.titleBarStyle": "custom",
   "window.commandCenter": false,
-  "apc.activityBar": {
-    "position": "bottom",
-    "size": 30
-  },
-  "apc.statusBar": {
-    "position": "editor-bottom"
-  },
-  "apc.stylesheet": {
-    ".codicon-arrow-right, .codicon-arrow-left": "display: none !important;",
-    ".monaco-editor-hover, .monaco-hover": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
-    ".quick-input-widget": "transform: translateY(-50%) !important; top: 50% !important; box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; padding: 0.75em 0.75em 1.25em 0.75em !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border-radius: 0.5em !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
-    ".sidebar > .composite": "height: 2.6em !important;",
-    ".title-label": "display: none !important;",
-    ".title-actions": "display: none !important;",
-    ".titlebar-center": "display: none !important;",
-    ".titlebar-right": "display: none !important;",
-    ".hover-row, .status-bar": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.3) !important; padding: 0.625em !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important;",
-    ".line-numbers": "position: relative !important; width: 1em !important; font-size: 1.5em !important; font-family:'monospace' !important; opacity: .3;",
-    ".monaco-editor .scroll-decoration": "box-shadow: 0em 0em 1.25em rgba(0, 0, 0, .75) !important; top: -0.375em !important;",
-    ".part.sidebar": "box-shadow: 0em 0em 3.125em rgba(0, 0, 0, .25);",
-    ".monaco-list.list_id_1 .monaco-list-row.selected": "background-color: #4f5971 !important; opacity: 1 !important; border-top: 0.0625em #727b90 solid; border-bottom: 0.0625em #727b90 solid;",
-    ".monaco-list.list_id_1 .monaco-list-row.selected .label-name": "color: #fff !important; opacity: 1 !important;",
-    ".notifications-toasts .monaco-list-row:hover": "background: none !important;",
-    ".quick-input-filter .monaco-inputbox": "border-radius: 0.5em !important; padding: 0.5em !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important;  margin-bottom: 1em !important;",
-    ".monaco-list-rows": "background: transparent !important; font-size: 1.2em !important;",
-    ".monaco-list-row:hover": "background: rgba(0, 0, 0, .2) !important;",
-    ".monaco-inputbox input::placeholder": "color: rgba(255, 255, 255, .5) !important;",
-    ".slider": "position: absolute !important; right: 0.0625em !important; width: 1em !important; background: #2BA59D !important; left: auto !important;"
-  },
   "window.confirmSaveUntitledWorkspace": false,
-  "breadcrumbs.enabled": false,
   // Terminal settings
   "terminal.integrated.env.windows": {},
   "terminal.integrated.profiles.windows": {
@@ -150,7 +120,7 @@
     "*.dll": "default",
     "*.vsix": "default"
   },
-  "workbench.colorTheme": "Andromeda",
+  "workbench.colorTheme": "Andromeda Bordered",
   "workbench.settings.editor": "json",
   "workbench.editor.labelFormat": "short",
   "workbench.editor.showIcons": true,
@@ -244,5 +214,78 @@
   "sonarlint.focusOnNewCode": true,
   "sonarlint.disableTelemetry": true,
   // misc
-  "editor.largeFileOptimizations": false
+  "editor.largeFileOptimizations": false,
+  "vscode_custom_css.imports": [
+    "file:///Users/chrisalphonse/vscode-settings-json-main/custom-vscode.css"
+  ],
+  "workbench.sideBar.location": "right",
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "update.mode": "none",
+  "workbench.activityBar.location": "bottom",
+  "gitlens.rebaseEditor.ordering": "asc",
+  "workbench.startupEditor": "none",
+  "apc.stylesheet": {
+    ".codicon-arrow-right, .codicon-arrow-left": "display: none !important;",
+    ".monaco-editor-hover, .monaco-hover": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
+    ".quick-input-widget": "transform: translateY(-50%) !important; top: 50% !important; box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; padding: 0.75em 0.75em 1.25em 0.75em !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border-radius: 0.5em !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
+    ".sidebar > .composite": "height: 2.6em !important;",
+    ".title-label": "display: none !important;",
+    ".title-actions": "display: none !important;",
+    ".titlebar-center": "display: none !important;",
+    ".titlebar-right": "display: none !important;",
+    ".hover-row, .status-bar": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.3) !important; padding: 0.625em !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important;",
+    ".line-numbers": "position: relative !important; width: 1em !important; font-size: 1.5em !important; font-family:'monospace' !important; opacity: .3;",
+    ".monaco-editor .scroll-decoration": "box-shadow: 0em 0em 1.25em rgba(0, 0, 0, .75) !important; top: -0.375em !important;",
+    ".part.sidebar": "box-shadow: 0em 0em 3.125em rgba(0, 0, 0, .25);",
+    ".monaco-list.list_id_1 .monaco-list-row.selected": "background-color: #4f5971 !important; opacity: 1 !important; border-top: 0.0625em #727b90 solid; border-bottom: 0.0625em #727b90 solid;",
+    ".monaco-list.list_id_1 .monaco-list-row.selected .label-name": "color: #fff !important; opacity: 1 !important;",
+    ".notifications-toasts .monaco-list-row:hover": "background: none !important;",
+    ".quick-input-filter .monaco-inputbox": "border-radius: 0.5em !important; padding: 0.5em !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important;  margin-bottom: 1em !important;",
+    ".monaco-list-rows": "background: transparent !important; font-size: 1.2em !important;",
+    ".monaco-list-row:hover": "background: rgba(0, 0, 0, .2) !important;",
+    ".monaco-inputbox input::placeholder": "color: rgba(255, 255, 255, .5) !important;",
+    ".slider": "position: absolute !important; right: 0.0625em !important; width: 1em !important; background: #2BA59D !important; left: auto !important;"
+  },
+  "breadcrumbs.enabled": false,
+
+  "background.enabled": true,
+
+  //   "background.style": {
+  //     "content": "''",
+  //     "pointer-events": "none",
+  //     "position": "absolute",
+  //     "top": "0",
+  //     "left": "0",
+  //     "right": "0",
+  //     "bottom": "0",
+  //     "width": "100%",
+  //     "height": "100%",
+  //     "z-index": "9999",
+  //     "background-size": "cover",
+  //     "background-position": "center",
+  //     "background-repeat": "no-repeat",
+  //     "opacity": 0.1
+  //   },
+  //   "background.customImages": [
+  //     "https://static.wixstatic.com/media/357f4a_65857f1220c14e7cb9763945ce505819~mv2.png/v1/crop/x_0,y_79,w_1642,h_2232/fill/w_290,h_395,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/girl%20and%20balloon%20dekupe%20Christmas_edited.png",
+  //     "https://raw.githubusercontent.com/ThrowSyntaxError/background/refs/heads/main/7.jpeg",
+  //     "https://user-images.githubusercontent.com/18376480/55394572-30827700-5572-11e9-9435-2cc501eb53bb.png"
+  //   ]
+  "background.editor": {
+    "useFront": true,
+    "style": {
+      "background-position": "100% 100%",
+      "background-size": "10rem",
+      "opacity": 0.5
+    },
+    "styles": [{}, {}, {}],
+
+    "images": [
+      "file:///Users/chrisalphonse/Downloads/m2i8N4K9d3d3m2H7.png",
+      "https://static.wixstatic.com/media/357f4a_65857f1220c14e7cb9763945ce505819~mv2.png/v1/crop/x_0,y_79,w_1642,h_2232/fill/w_290,h_395,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/girl%20and%20balloon%20dekupe%20Christmas_edited.png"
+    ],
+    "interval": 0,
+    "random": false
+  }
 }
