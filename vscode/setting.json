@@ -248,8 +248,8 @@
     ".slider": "position: absolute !important; right: 0.0625em !important; width: 1em !important; background: #2BA59D !important; left: auto !important;"
   },
   "apc.electron": {
-    "opacity": 0.95,
-    "transparent": true,
+    "opacity": 0.97,
+    "transparent": false,
     "backgroundColor": "#00000000",
     "vibrancy": "ultra-dark"
   },
