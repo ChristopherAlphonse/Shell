@@ -247,12 +247,6 @@
     ".monaco-inputbox input::placeholder": "color: rgba(255, 255, 255, .5) !important;",
     ".slider": "position: absolute !important; right: 0.0625em !important; width: 1em !important; background: #2BA59D !important; left: auto !important;"
   },
-  "apc.electron": {
-    "opacity": 0.97,
-    "transparent": false,
-    "backgroundColor": "#00000000",
-    "vibrancy": "ultra-dark"
-  },
 
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -284,5 +278,10 @@
     ],
     "interval": 0,
     "random": false
-  }
+  },
+  "glassit.alpha": 190,
+  "animations.Install-Method": "Apc Customize UI++",
+  "apc.imports": [
+    "file:///c:/Users/chris-desktop/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+  ]
 }
