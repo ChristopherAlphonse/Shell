@@ -212,8 +212,9 @@
   // Sonar
   "sonarlint.focusOnNewCode": true,
   "sonarlint.disableTelemetry": true,
-  // misc
   "editor.largeFileOptimizations": false,
+
+  // macOS settings
   "vscode_custom_css.imports": [
     "file:///Users/chrisalphonse/vscode-settings-json-main/custom-vscode.css",
     "file:///Users/chrisalphonse/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
@@ -225,7 +226,11 @@
   "workbench.activityBar.location": "bottom",
   "gitlens.rebaseEditor.ordering": "asc",
   "workbench.startupEditor": "none",
-
+  // Windows vscode settings -version 1.93.1 https://code.visualstudio.com/updates/v1_93
+  "animations.Install-Method": "Apc Customize UI++",
+  "apc.imports": [
+    "file:///c:/Users/chris-desktop/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
+  ],
   "apc.stylesheet": {
     ".codicon-arrow-right, .codicon-arrow-left": "display: none !important;",
     ".monaco-editor-hover, .monaco-hover": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
@@ -263,10 +268,6 @@
   "breadcrumbs.enabled": false,
   "window.zoomLevel": 3,
   "glassit.alpha": 241,
-  "animations.Install-Method": "Apc Customize UI++",
-  "apc.imports": [
-    "file:///c:/Users/chris-desktop/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
-  ],
   // Python
 
   "[python]": {

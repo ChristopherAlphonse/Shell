@@ -1,13 +1,19 @@
+# set PowerShell to UTF-8
+[console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
+
 
 Import-Module posh-git
 Import-Module PowerShellGet
 Import-Module -Name Terminal-Icons
 
 
-function md5 { Get-FileHash -Algorithm MD5 $args }
-function sha1 { Get-FileHash -Algorithm SHA1 $args }
-function sha256 { Get-FileHash -Algorithm SHA256 $args }
+# Fzf
+Install-Module -Name PSFzf
+Set-PsFzfOption -PSReadlineChordProvider 'Ctrl+t' -PSReadlineChordReverseHistory 'Ctrl+r'
 
+
+# Env
+$env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 
 function atob {
     param([string]$userInput)
@@ -163,6 +169,8 @@ Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
 Set-PSReadLineKeyHandler -Chord 'Ctrl+d' -Function DeleteChar
 Set-PSReadLineOption -PredictionSource History
+Set-PSReadLineOption -HistoryNoDuplicates:$true
+Set-PSReadLineOption -PredictionViewStyle ListView
 
 
 # Set aliases
@@ -180,3 +188,10 @@ Set-Alias -Name h -Value "Get-History"
 Set-Alias -Name c -Value "Clear-Host"
 Set-Alias -Name ls -Value Get-ChildItem
 Set-Alias -Name be -Value "bundle exec"
+Set-Alias grep findstr
+
+
+function which ($command) {
+  Get-Command -Name $command -ErrorAction SilentlyContinue |
+    Select-Object -ExpandProperty Path -ErrorAction SilentlyContinue
+}
