@@ -49,7 +49,7 @@
   // Git settings
   "diffEditor.wordWrap": "on",
   "diffEditor.ignoreTrimWhitespace": false,
-  "diffEditor.renderSideBySide": false,
+  "diffEditor.renderSideBySide": true,
   "git.confirmSync": false,
   "git.autofetch": true,
   "git.enableSmartCommit": true,
@@ -208,7 +208,7 @@
   },
   // Jest settings
   "jest.runMode": "on-demand",
-  "notebook.defaultFormatter": "esbenp.prettier-vscode",
+  "notebook.defaultFormatter": "ms-python.vscode-pylance",
   // Sonar
   "sonarlint.focusOnNewCode": true,
   "sonarlint.disableTelemetry": true,
@@ -225,6 +225,7 @@
   "workbench.activityBar.location": "bottom",
   "gitlens.rebaseEditor.ordering": "asc",
   "workbench.startupEditor": "none",
+
   "apc.stylesheet": {
     ".codicon-arrow-right, .codicon-arrow-left": "display: none !important;",
     ".monaco-editor-hover, .monaco-hover": "box-shadow: 0em 0.5em 1.5em rgba(0, 0, 0, 0.5) !important; background: rgba(40, 42, 54, 0.5) !important; backdrop-filter: blur(0.375em) !important; border: 0.0625em solid rgba(255, 255, 255, 0.15) !important;",
@@ -260,28 +261,20 @@
   "animations.Active": "Indent",
   "editor.fontLigatures": true,
   "breadcrumbs.enabled": false,
-
-  "background.enabled": true,
-
-  "background.editor": {
-    "useFront": true,
-    "style": {
-      "background-position": "100% 100%",
-      "background-size": "10rem",
-      "opacity": 0.5
-    },
-    "styles": [{}, {}, {}],
-
-    "images": [
-      "file:///Users/chrisalphonse/Downloads/m2i8N4K9d3d3m2H7.png",
-      "https://static.wixstatic.com/media/357f4a_65857f1220c14e7cb9763945ce505819~mv2.png/v1/crop/x_0,y_79,w_1642,h_2232/fill/w_290,h_395,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/girl%20and%20balloon%20dekupe%20Christmas_edited.png"
-    ],
-    "interval": 0,
-    "random": false
-  },
-  "glassit.alpha": 190,
+  "window.zoomLevel": 3,
+  "glassit.alpha": 241,
   "animations.Install-Method": "Apc Customize UI++",
   "apc.imports": [
     "file:///c:/Users/chris-desktop/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.4/dist/updateHandler.js"
-  ]
+  ],
+  // Python
+
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8",
+    "editor.formatOnSave": true
+  },
+  "pylint.enabled": true,
+  // Co-pilot
+  "gitlens.ai.model": "anthropic:claude-3-5-sonnet-latest",
+  "github.copilot.editor.enableAutoCompletions": true
 }
