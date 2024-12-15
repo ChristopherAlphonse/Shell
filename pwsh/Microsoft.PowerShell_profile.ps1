@@ -68,30 +68,41 @@ function lintts {
 
 function gsw {
     param(
-        [string]$branchName
-    )
+        [Parameter(Position = 0, Mandatory = $true)]
+        [string]$branchName,
 
-    if (-not $branchName) {
-        Write-Error "You must provide a branch name."
-        return
-    }
+        [switch]$Create
+    )
 
     try {
 
-        git show-ref --verify --quiet "refs/heads/$branchName"
-        if ($LASTEXITCODE -eq 0) {
+        $branchExistsLocally = git branch --list "$branchName" | ForEach-Object { $_.Trim() }
+        $branchExistsRemotely = git ls-remote --heads origin "$branchName" | ForEach-Object { $_.Trim() }
+
+        if ($branchExistsLocally -or $branchExistsRemotely) {
+            if ($Create) {
+                Write-Error "Cannot create branch '$branchName'. It already exists."
+                return
+            }
             git switch $branchName
+            Write-Output "Switched to branch '$branchName'."
         } else {
-            Write-Output "Branch '$branchName' does not exist locally. Attempting to check it out remotely..."
-            git switch -c $branchName --track origin/$branchName
+            if ($Create) {
+                git switch -c $branchName
+                Write-Output "Created and switched to branch '$branchName'."
+            } else {
+
+                git switch --track origin/$branchName
+                Write-Output "Switched to remote tracking branch '$branchName'."
+            }
         }
     } catch {
-        Write-Error "Failed to switch to branch '$branchName': $_"
+        Write-Error "An error occurred: $_"
     }
 }
 
 
-function gsw-rebase {
+function rebase-f {
     param(
         [Parameter(Mandatory = $true)]
         [string]$t,
@@ -132,6 +143,21 @@ function gsw-rebase {
     }
 }
 
+function rebase-i{
+    param(
+        [Parameter(Mandatory = $true)]
+        [int]$count
+    )
+
+    try {
+
+        git rebase -i HEAD~$count
+        Write-Output "Interactive rebase started for the last $count commits."
+    } catch {
+        Write-Error "An error occurred while attempting the interactive rebase: $_"
+    }
+}
+
 
 Set-PSReadLineOption -EditMode Emacs
 Set-PSReadLineOption -BellStyle None
@@ -147,8 +173,8 @@ Set-Alias -Name folder -Value mkdir
 Set-Alias -Name g -Value git
 Set-Alias -Name gs -Value "git status"
 Set-Alias -Name ga -Value "git add"
-Set-Alias -Name gc -Value "git commit"
-Set-Alias -Name gp -Value "git push"
+
+
 Set-Alias -Name cls -Value "Clear-Host"
 Set-Alias -Name h -Value "Get-History"
 Set-Alias -Name c -Value "Clear-Host"
